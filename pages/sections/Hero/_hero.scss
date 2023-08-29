@@ -1,0 +1,71 @@
+.hero {
+	background-image: url(https://i.postimg.cc/wMZcFFTF/bg-speezard-2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+	width: 99vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	&__texts {
+		height: 70%;
+		display: grid;
+		align-content: center;
+		justify-content: center;
+		align-content: center;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		&-title {
+			@extend .heading;
+			@extend .mobile-heading-3;
+			
+
+			@media (min-width: 724px) {
+				font-weight: 500;
+				font-size: 7.2rem;
+				line-height: 9.4rem;
+			}
+
+			span {
+				color: $accent;
+				font-weight: 700;
+			}
+			@media only screen and (min-width: 320px) and (max-width: 767px) {
+				/* Estilos específicos para pantallas de tamaño medio (375px) */
+				line-height: 5.4rem;
+			}
+		}
+
+		&-text {
+			@extend .paragraph;
+			@extend .mobile-paragraph-md;
+			margin: 3.2rem 6rem 0;
+
+			@media (min-width: 724px) {
+				font-size: 2.2rem;
+				line-height: 3rem;
+			}
+			@media only screen and (min-width: 320px) and (max-width: 767px) {
+				/* Estilos específicos para pantallas de tamaño medio (375px) */
+				line-height: 4.4rem;
+				margin: 3.2rem 4rem 0;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@extend .paragraph;
+		@extend .mobile-paragraph-md;
+
+		@media (min-width: 724px) {
+			font-size: 1.8rem;
+		}
+	}
+}

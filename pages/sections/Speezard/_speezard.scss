@@ -1,0 +1,164 @@
+.speezard {
+	width: 90%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 32px;
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: 900px) {
+			flex-direction: row;
+		}
+
+		&-left {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+			&-title {
+				@extend .heading;
+				@extend .mobile-heading-2;
+				padding-top: 64px;
+
+				span {
+					color: $accent;
+				}
+
+				@media (min-width: 900px) {
+					padding-top: 32px;
+					font-size: 4.8rem;
+					line-height: 6.5rem;
+				}
+				@media only screen and (min-width: 320px) and (max-width: 767px) {
+					/* Estilos específicos para pantallas de tamaño medio (320px) */
+					text-align: center;
+				}
+			}
+
+			&-subtitle {
+				padding-top: 32px;
+				text-align: center;
+				@extend .desktop-heading-1;
+				@extend .mobile-heading-3;
+				@media (min-width: 900px) {
+					text-align: left;
+				}
+				@media only screen and (min-width: 320px) and (max-width: 767px) {
+					/* Estilos específicos para pantallas de tamaño medio (320px) */
+					font-size: 2.4rem;
+				}
+			}
+
+			&-subtext {
+				padding-top: 32px;
+				display: flex;
+				@extend .desktop-heading-4;
+				@extend .mobile-heading-4;
+				color: $accent;
+				.triangle {
+					margin: 6px 4px 0 0;
+					width: 8px;
+					height: 8px;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-bottom: 16px solid white;
+					transform: rotate(90deg);
+				}
+			}
+
+			&-text {
+				padding-top: 4px;
+				@extend .paragraph;
+				@extend .mobile-paragraph-md;
+				@media (min-width: 900px) {
+					font-weight: 400;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+				}
+			}
+		}
+		&-right {
+			gap: 16px;
+			@media (min-width: 900px) {
+				.first {
+					position: absolute;
+					padding-top: 50px;
+				}
+				.second {
+					z-index: 1;
+					padding-top: 150px;
+					padding-left: 200px;
+					animation: floatingAnimation 4s ease-in-out infinite;
+				}
+			}
+
+			@media only screen and (min-width: 320px) and (max-width: 767px) {
+				/* Estilos específicos para pantallas de tamaño medio (320px) */
+				display: none;
+			}
+
+		}
+	}
+
+	&__bottom {
+		padding-top: 32px;
+
+		@media (min-width: 900px) {
+			padding-top: 32px;
+			display: grid;
+			grid-template-columns: 
+				repeat(
+					auto-fit,
+					minmax(150px, 1fr)
+				);
+			gap: 32px;
+
+		}
+
+		&-item {
+			flex: 1;
+			text-align: center;
+			border: 2px solid $accent;
+			border-radius: 8px;
+			padding: 32px;
+			margin-top: 16px;
+			@media (min-width: 900px) {
+				padding: 2vw;
+			}
+			
+
+			&-title {
+				@extend .heading;
+				@extend .mobile-heading-6;
+				margin-bottom: 1rem;
+				@media (min-width: 1024px) {
+					font-weight: 600;
+					text-align: center;
+					font-size: 1.8rem;
+					line-height: 2.6rem;
+					margin: 8px;
+					padding-bottom: 16px;
+				}
+				
+			}
+
+			&-image {
+				border-radius: 16px;
+				width: 100%;
+				height: auto;
+			}
+
+			&-text {
+				@extend .paragraph;
+				@extend .mobile-paragraph-md;
+				margin-top: 32px; 
+				margin-bottom: 2rem;
+				@media (min-width: 900px) {
+					font-weight: 400;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+				}
+			}
+		}
+	}
+}
